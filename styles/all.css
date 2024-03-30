@@ -31,6 +31,9 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
 }
 
 .header-head, .header-body, .header-foot {
@@ -82,10 +85,12 @@ img {
 .banner {
     background-image: linear-gradient(135deg, #cf7688 20%, #f5ba54 100%);
     color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
 }
 
 .banner-container {
     display: flex;
+    align-items: center;
 }
 
 .banner-head, .banner-body {
@@ -136,6 +141,12 @@ img {
 .banner-index .banner-head {
     display: flex;
     flex-direction: column;
+    width: 40%;
+}
+
+.banner-index .banner-body {
+    position: relative;
+    width: 60%;
 }
 
 .banner-ul-order1 {
@@ -164,3 +175,36 @@ img {
 .banner-btn:hover {
     background-color: rgba(255, 255, 255, .2);
 }
+
+.banner-img-mobile, .banner-img-pad {
+    position: absolute;
+}
+
+.banner-img-mobile {
+    left: 0;
+    bottom: 5rem;
+}
+
+.banner-img-pad {
+    right: 1rem;
+    bottom: -2rem;
+}
+
+.banner-img-desktop {
+    margin-left: 4.5rem;
+}
+
+.banner-li + .banner-li::before {
+    content: "";
+    background-color: rgba(255, 255, 255, .2);
+    height: 4px;
+    width: 4px;
+    left: -.6rem;
+    top: .4rem;
+    position: absolute;
+}
+
+.banner-index .banner-head, .banner-index .banner-body {
+    padding-top: 3rem;
+}
+
